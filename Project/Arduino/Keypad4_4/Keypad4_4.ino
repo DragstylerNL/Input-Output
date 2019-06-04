@@ -1,5 +1,3 @@
-#include <Keyboard.h>
-
 #include <Keypad.h>
 
 const byte ROWS = 4; //four rows
@@ -21,24 +19,26 @@ void setup(){
 }
   
 void loop(){
+
+  if (Serial.available()){
+     char ch = Serial.read();
+     if( ch == 'k'){
+        Serial.write('90');
+     }
+  }
+  
   char key = keypad.getKey();
     // just print the pressed key
-  if (key == '1'){
-    Keyboard.write('1');
-  } 
   if (key == '2'){
-    Keyboard.write('2');
+    Serial.write("2");
   } 
   if (key == '3'){
-    Keyboard.write('3');
-  } 
-  if (key == '4'){
-    Keyboard.write('4');
-  } 
-  if (key == '6'){
-    Keyboard.write('6');
-  } 
+    Serial.write("3");
+  }
   if (key == '8'){
-    Keyboard.write('8');
+    Serial.write("8");
+  } 
+  if (key == '9'){
+    Serial.write("9");
   } 
 }
