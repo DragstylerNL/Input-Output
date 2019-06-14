@@ -9,8 +9,8 @@ char keys[ROWS][COLS] = {
   {'*','0','#','D'}
 };
 
-byte rowPins[ROWS] = {2, 3, 4, 5}; //connect to the row pinouts of the keypad
-byte colPins[COLS] = {6,7,8,9}; //connect to the column pinouts of the keypad
+byte rowPins[ROWS] = {5,4,3,2}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {9,8,7,6}; //connect to the column pinouts of the keypad
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
@@ -31,14 +31,11 @@ void loop(){
     // just print the pressed key
   if (key == '2'){
     Serial.write("2");
-  } 
-  if (key == '3'){
-    Serial.write("3");
+  }
+  if (key == '6'){
+    Serial.write("6");
   }
   if (key == '8'){
     Serial.write("8");
-  } 
-  if (key == '9'){
-    Serial.write("9");
-  } 
+  }
 }
